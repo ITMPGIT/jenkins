@@ -10,7 +10,7 @@ variable "octetIP" { default = "31" }
 
 # instance the provider
 provider "libvirt" {
-  uri = "qemu:///system"
+  uri = "qemu+ssh://oem@192.168.1.108/system"
 }
 
 # fetch the latest ubuntu release image from their mirrors
@@ -20,7 +20,9 @@ resource "libvirt_volume" "os_image" {
   # using newest ubuntu focal 20.04
   #source = "https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img"
   #source = "https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img"
-  source = "/media/oem/08ce451b-7ba9-4ddb-a8ff-ea89d7c074aa/OL7U9_x86_64-kvm-b145.qcow"
+  #source = "/media/oem/08ce451b-7ba9-4ddb-a8ff-ea89d7c074aa/OL7U9_x86_64-kvm-b145.qcow"
+  # cloud image OL7
+  source = "https://yum.oracle.com/templates/OracleLinux/OL7/u9/x86_64/OL7U9_x86_64-kvm-b145.qcow"
   format = "qcow2"
 }
 
