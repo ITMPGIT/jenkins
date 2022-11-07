@@ -91,7 +91,7 @@ terraform {
     }
   }
   backend "pg" {
-    conn_str = "postgres://postgres:postgres@192.168.1.111/terraform?sslmode=disable"
+    conn_str = "postgres://postgres:postgres@192.168.1.107/terraform?sslmode=disable"
   }
 }
 output "ips" {
